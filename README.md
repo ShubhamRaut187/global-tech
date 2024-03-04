@@ -12,3 +12,5 @@ Clone the landing page provided through adode.xd file.
 Mock JSON Server - Render
 Frontend - Vercel
 
+# Landing Page
+![Home](https://github.com/ShubhamRaut187/global-tech/blob/main/src/Photos/H1.png?raw=true)
