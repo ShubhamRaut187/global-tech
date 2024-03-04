@@ -14,3 +14,5 @@ Frontend - Vercel
 
 # Landing Page
 ![Home](https://github.com/ShubhamRaut187/global-tech/blob/main/src/Photos/H1.png?raw=true)
+![Home](https://github.com/ShubhamRaut187/global-tech/blob/main/src/Photos/H2.png?raw=true)
+![Home](https://github.com/ShubhamRaut187/global-tech/blob/main/src/Photos/H3.png?raw=true)
