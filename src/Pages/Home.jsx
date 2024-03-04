@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import ProductCard from '../Components/ProductCard';
 import TestimonialCard from '../Components/TestimonialCard';
 import SliderNextArrow from '../Components/SliderNextArrow';
@@ -29,6 +29,7 @@ import "slick-carousel/slick/slick-theme.css";
 
 
 function Home(props) {
+    let [Products,SetProducts] = useState([]);
     const [divColors, setDivColors] = useState({
         face: {
             text:'#70645C',
@@ -44,6 +45,16 @@ function Home(props) {
         }
        
     });
+
+    const getData = async(category) => {
+        try {
+            let result = await fetch(`https://ecommercedummydata.onrender.com/${category}`);
+            let response = await result.json();
+            SetProducts(response); 
+        } catch (error) {
+            console.log(error);
+        }
+    }
     
     const handleDivClick = (divName) => {
         const newColors = {
@@ -64,7 +75,7 @@ function Home(props) {
             text:'white',
             bg:'#70645C'
         };
-
+        getData(divName);
         setDivColors(newColors);
     };
       
@@ -134,6 +145,11 @@ function Home(props) {
         return newSettings;
       };
 
+      useEffect(()=>{
+        getData('face');
+      },[]);
+
+
     return (
         <div id='Home_main'>
             <div className='home_baner'>
@@ -192,7 +208,7 @@ function Home(props) {
             <div className='home_product_slider_main'>
                 <div className='home_product_slider'>
                     <Slider {...settings}>
-                        <ProductCard Image={Prod1}/>
+                        {/* <ProductCard Image={Prod1}/>
                         <ProductCard Image={Prod2}/>
                         <ProductCard Image={Prod3}/>
                         <ProductCard Image={Prod1}/>
@@ -200,7 +216,12 @@ function Home(props) {
                         <ProductCard Image={Prod3}/>
                         <ProductCard Image={Prod1}/>
                         <ProductCard Image={Prod2}/>
-                        <ProductCard Image={Prod3}/>
+                        <ProductCard Image={Prod3}/> */}
+                        {
+                            Products.map((elem,index)=>{
+                                return <ProductCard key={index}Image={elem.Image} Name={elem.Name} Price={elem.Price}/>
+                            })
+                        }
                     </Slider>
                     
                 </div>
@@ -213,14 +234,15 @@ function Home(props) {
                     <h1>Our Best Seller</h1>
                 </div>
                 <div className='best_seller_products'>
-                        <ProductCard Image={Prod1}/>
-                        <ProductCard Image={Prod2}/>
-                        <ProductCard Image={Prod3}/>
-                        <ProductCard Image={Prod1}/>
-                        <ProductCard Image={Prod1}/>
-                        <ProductCard Image={Prod2}/>
-                        <ProductCard Image={Prod3}/>
-                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod1} Name={'Indus Valley Kumkumadi Beauty Concentrate - For All Skin Types'} Price={'1000'}/>
+                        <ProductCard Image={Prod2} Name={'Himalayan Kusuma Oil Hydrating Anti-Ageing Vit-C Face Serum'} Price={'450'}/>
+                        <ProductCard Image={Prod3} Name={'Mahodaya Kannauj Rose Organic Lip Butter - Pink'} Price={'700'}/>
+                        <ProductCard Image={Prod1} Name={'Indus Valley Kumkumadi Beauty Concentrate - For All Skin Types'} Price={'1000'}/>
+                        <ProductCard Image={Prod2} Name={'Himalayan Kusuma Oil Hydrating Anti-Ageing Vit-C Face Serum'} Price={'450'}/>
+                        <ProductCard Image={Prod3} Name={'Mahodaya Kannauj Rose Organic Lip Butter - Pink'} Price={'700'}/>
+                        <ProductCard Image={Prod1} Name={'Indus Valley Kumkumadi Beauty Concentrate - For All Skin Types'} Price={'1000'}/>
+                        <ProductCard Image={Prod2} Name={'Himalayan Kusuma Oil Hydrating Anti-Ageing Vit-C Face Serum'} Price={'450'}/>
+                        
                 </div>
                 <div className='home_product_slider_btn'>
                         <button>View All</button>
@@ -280,7 +302,7 @@ function Home(props) {
                         <img src={NavyCircle} alt="gift" />
                     </div>
                     <div className='feature_name'>
-                    <h2>Free Shipping</h2>
+                    <h2>Complimentary Samples</h2>
                     </div>
                 </div>
                 <div className='feature_card'>
@@ -288,7 +310,7 @@ function Home(props) {
                         <img src={Human} alt="gift" />
                     </div>
                     <div className='feature_name'>
-                        <h2>Free Shipping</h2>
+                        <h2>Ace Referal</h2>
                     </div>
                 </div>
                 <div className='feature_card'>
@@ -296,7 +318,7 @@ function Home(props) {
                         <img src={Gift} alt="gift" />
                     </div>
                     <div className='feature_name'>
-                    <h2>Free Shipping</h2>
+                    <h2>Great Rewards</h2>
                     </div>
                 </div>
             </div>
@@ -313,7 +335,7 @@ function Home(props) {
                         </ul>
                     </div>
                     <div>
-                    <p>Shop</p>
+                    <p>About</p>
                         <ul>
                             <li>Our Story</li>
                             <li>Giving Back</li>
@@ -326,7 +348,7 @@ function Home(props) {
                         </ul>
                     </div>
                     <div>
-                    <p>Shop</p>
+                    <p>Quick Links</p>
                         <ul>
                            <li>My Account</li>
                            <li>Custom Products</li>
@@ -339,13 +361,10 @@ function Home(props) {
                         </ul>
                     </div>
                     <div>
-                    <p>Shop</p>
+                    <p>Get in Touch</p>
                         <ul>
-                            <li>Face Care</li>
-                            <li>Body Care</li>
-                            <li>Hair Care</li>
-                            <li>Custom</li>
-                            <li>Gifting</li>
+                            <li>Email: timelesscare@timelessbeautysecr</li>
+                            <li>Phone: 7499265181</li>
                         </ul>
                         <div className='socialicons'>
                         <i className="fa-brands fa-twitter fa-xl" style={{color:'white'}}></i>

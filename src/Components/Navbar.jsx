@@ -28,7 +28,7 @@ function Navbar(props) {
             </div>
             <div className="navbar">
             <div className="nav-container">
-                {/* <Link to="#home" className="nav-logo" smooth>
+                {/* <Link to="#home" className="nav-logo">
                     <span>Shubham Raut</span>
                     <i className="fas fa-code"></i>
                     <span className="icon">
@@ -41,7 +41,7 @@ function Navbar(props) {
               <Link
                 // exact
                 to="#home"
-                smooth
+               
                 // activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -53,7 +53,7 @@ function Navbar(props) {
               <Link
                 // exact
                 to="#about"
-                smooth
+               
                 // activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -65,7 +65,7 @@ function Navbar(props) {
               <Link
                 // exact
                 to="#skills"
-                smooth
+               
                 // activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
@@ -77,7 +77,7 @@ function Navbar(props) {
               <Link
                 // exact
                 to="#projects"
-                smooth
+               
                 // activeClassName="active"
                 className="nav-links"
                 onClick={handleClick}
