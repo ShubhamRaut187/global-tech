@@ -17,6 +17,9 @@ import Gift from '../Photos/Gift.png'
 import Human from '../Photos/Human.png'
 import NavyCircle from '../Photos/NavyCircle.png'
 import Bottom from '../Photos/Bottom.png'
+import Prod1 from '../Photos/Kushuma35mlPaint.png'
+import Prod2 from '../Photos/Mahodaya Rose Paint.png'
+import Prod3 from '../Photos/Kumkumadi.png'
 
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
@@ -189,12 +192,15 @@ function Home(props) {
             <div className='home_product_slider_main'>
                 <div className='home_product_slider'>
                     <Slider {...settings}>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
-                        <ProductCard/>
+                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod2}/>
+                        <ProductCard Image={Prod3}/>
+                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod2}/>
+                        <ProductCard Image={Prod3}/>
+                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod2}/>
+                        <ProductCard Image={Prod3}/>
                     </Slider>
                     
                 </div>
@@ -207,14 +213,14 @@ function Home(props) {
                     <h1>Our Best Seller</h1>
                 </div>
                 <div className='best_seller_products'>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod2}/>
+                        <ProductCard Image={Prod3}/>
+                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod1}/>
+                        <ProductCard Image={Prod2}/>
+                        <ProductCard Image={Prod3}/>
+                        <ProductCard Image={Prod1}/>
                 </div>
                 <div className='home_product_slider_btn'>
                         <button>View All</button>

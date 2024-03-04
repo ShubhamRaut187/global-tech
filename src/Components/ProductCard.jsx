@@ -2,11 +2,11 @@ import React from 'react';
 import './ComponentStyles/ProductCard.css'
 import kumkumadi from '../Photos/Kumkumadi.png'
 import Ratings from '../Photos/Ratings.png'
-function ProductCard(props) {
+function ProductCard({Image}) {
     return (
         <div className='product_card_main'>
             <div className='product_card_img'>
-                <img src={kumkumadi} alt="" />
+                <img src={Image} alt="" />
             </div>
             <div className='product_card_info_div'>
                 <div className='product_name'>
